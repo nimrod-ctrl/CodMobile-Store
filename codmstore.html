@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Call of Duty Mobile Shop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+
+  body{
+    font-family:Arial;
+    color:white;
+    background:#000;
+  }
+
+  /* Background */
+  body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url("https://images.unsplash.com/photo-1542751371-adc38448a05e") center/cover no-repeat;
+    filter:brightness(0.35);
+    z-index:-2;
+  }
+
+  /* Overlay */
+  .overlay{
+    min-height:100vh;
+    background:rgba(0,0,0,0.65);
+    padding-bottom:40px;
+  }
+
+  /* HEADER */
+  header{
+    padding:20px;
+    text-align:center;
+    border-bottom:2px solid #00c8ff;
+  }
+
+  header h1{
+    color:#00c8ff;
+    font-size:28px;
+    animation:glow 2s infinite alternate;
+  }
+
+  @keyframes glow{
+    from{text-shadow:0 0 10px #00c8ff;}
+    to{text-shadow:0 0 30px #00c8ff,0 0 50px #00c8ff;}
+  }
+
+  .quote{
+    margin-top:10px;
+    color:#ccc;
+    font-style:italic;
+  }
+
+  /* CLOCK & DATE */
+  .clock{
+    margin-top:10px;
+    color:#00c8ff;
+    font-weight:bold;
+  }
+
+  .date{
+    margin-top:5px;
+    color:#aaa;
+    font-size:14px;
+    letter-spacing:1px;
+  }
+
+  /* CONTAINER */
+  .container{
+    padding:20px;
+  }
+
+  .grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+  }
+
+  /* CARD */
+  .card{
+    width:320px;
+    padding:20px;
+    border-radius:15px;
+    background:rgba(20,20,20,0.75);
+    border:1px solid #00c8ff;
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 20px rgba(0,200,255,0.4);
+    text-align:center;
+    transition:0.3s;
+  }
+
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 30px #00c8ff;
+  }
+
+  .card h2{
+    color:#00c8ff;
+  }
+
+  .price{
+    color:gold;
+    font-weight:bold;
+    margin:10px 0;
+  }
+
+  .desc{
+    color:#ccc;
+    font-size:14px;
+  }
+
+  /* BUTTON */
+  .btn{
+    display:block;
+    width:fit-content;
+    margin:15px auto 0 auto;
+    padding:12px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(45deg,#00c8ff,#0077ff);
+    box-shadow:0 0 15px #00c8ff;
+    transition:0.3s;
+  }
+
+  .btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px #00c8ff;
+  }
+
+  /* TRIBUTE */
+  .tribute{
+    margin-top:35px;
+    text-align:center;
+    padding:20px;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+    font-family:'Orbitron', sans-serif;
+    font-size:18px;
+    letter-spacing:1px;
+    color:#00e5ff;
+    text-shadow:0 0 10px #00e5ff, 0 0 25px #00bcd4;
+    animation:glowPulse 2.5s infinite ease-in-out;
+  }
+
+  .tribute span{
+    display:block;
+    margin-top:8px;
+    font-size:13px;
+    color:#b0c4de;
+    text-shadow:none;
+  }
+
+  @keyframes glowPulse{
+    0%{ opacity:0.8; text-shadow:0 0 8px #00e5ff; }
+    50%{ opacity:1; text-shadow:0 0 20px #00e5ff, 0 0 40px #00bcd4; }
+    100%{ opacity:0.85; text-shadow:0 0 10px #00e5ff; }
+  }
+
+  footer{
+    margin-top:40px;
+    text-align:center;
+    color:#777;
+    padding:15px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+  <header>
+    <h1>ℂ𝕒𝕝𝕝 𝕠𝕗 𝔻𝕦𝕥𝕪 𝕄𝕠𝕓𝕚𝕝𝕖 𝕊𝕙𝕠𝕡</h1>
+    <div class="quote">
+      "Freedom is not a gift that can be bestowed upon you. It must be earned."
+    </div>
+    <div class="clock" id="clock">00:00:00</div>
+    <div class="date" id="date">--/--/----</div>
+  </header>
+
+  <div class="container">
+    <div class="grid">
+      <div class="card">
+        <h2>CODM Official Store</h2>
+        <div class="price">Top Up CP Instantly</div>
+        <div class="desc">Official secure Call of Duty Mobile store.</div>
+        <a class="btn" href="https://store.callofdutymobile.com/en-ke/codm" target="_blank">BUY CP</a>
+      </div>
+
+      <div class="card">
+        <h2>Carry1st Shop</h2>
+        <div class="price">Africa’s Trusted Top CP Shop</div>
+        <div class="desc">Fast and secure CP top-ups across Africa.</div>
+        <a class="btn" href="https://shop.carry1st.com/en/KE/product/codm-call-of-duty-mobile-cp-points-top-up-battle-pass/direct-topup" target="_blank">BUY CP</a>
+      </div>
+    </div>
+
+    <div class="tribute">
+      IN LOVING MEMORY OF VINCE ZAMPELLA
+      <span>Co-creator of Call of Duty and a legendary figure in gaming history</span>
+    </div>
+  </div>
+
+  <footer>© 2026 Call of Duty Mobile Shop</footer>
+</div>
+
+<script>
+  function updateDateTime(){
+    const now = new Date();
+    
+    // Update Time
+    document.getElementById("clock").innerText = "🟢 " + now.toLocaleTimeString();
+    
+    // Update Date
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById("date").innerText = now.toLocaleDateString(undefined, options);
+  }
+  
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
+</script>
+
+</body>
+</html>
